@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTFKhayer", "DTFKhayer\DTFKhayer.csproj", "{C05B9D38-8AFD-4124-8522-F690EF25F013}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTFKhayerEntity", "DTFKhayerEntity\DTFKhayerEntity.csproj", "{987D99B8-36D5-4F59-9226-2D77ABF718AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C05B9D38-8AFD-4124-8522-F690EF25F013}.Debug|x64.ActiveCfg = Debug|x64
+		{C05B9D38-8AFD-4124-8522-F690EF25F013}.Debug|x64.Build.0 = Debug|x64
+		{C05B9D38-8AFD-4124-8522-F690EF25F013}.Release|x64.ActiveCfg = Release|x64
+		{C05B9D38-8AFD-4124-8522-F690EF25F013}.Release|x64.Build.0 = Release|x64
+		{987D99B8-36D5-4F59-9226-2D77ABF718AE}.Debug|x64.ActiveCfg = Debug|x64
+		{987D99B8-36D5-4F59-9226-2D77ABF718AE}.Debug|x64.Build.0 = Debug|x64
+		{987D99B8-36D5-4F59-9226-2D77ABF718AE}.Release|x64.ActiveCfg = Release|x64
+		{987D99B8-36D5-4F59-9226-2D77ABF718AE}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

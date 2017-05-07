@@ -1,0 +1,16 @@
+﻿<link rel="import" href="/sys/polymer/polymer.html">
+
+<template>
+    <template is="dom-bind">
+        <div><a href="/DTFKhayer"><< Back</a></div>
+
+        <div><b>Setting: {{model.Name}}</b></div>
+        <div>Edit Franchise Setting</div>
+        <div>Name: <input value="{{model.Name$::input}}"></div> 
+        <div>Street: <input value="{{model.Street$::input}}"></div> 
+        <div>Number: <input value="{{model.Number$::input}}"></div> 
+        <div>City: <input value="{{model.City$::input}}"></div> 
+        <div>Country: <input value="{{model.Country$::input}}"></div>
+        <div><button value="{{model.SaveSettingTrigger$::click}}" onmousedown="++this.value">Save</button></div> 
+    </template>
+</template>

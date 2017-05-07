@@ -1,0 +1,38 @@
+﻿<link rel="import" href="/sys/polymer/polymer.html">
+<template>
+    <template is="dom-bind">
+        <h2>Welcome</h2>
+        <h3>Create Main Corporation</h3>
+        <div>
+            <label>Corporation:</label>
+            <input value="{{model.Name$::input}}">
+        </div>
+        <button value="{{model.SaveCorporationTrigger$::click}}" onmousedown="++this.value">Create Corporation</button>
+
+        <div class="franchise-container">
+            <div><b>Real Estate Estate Stars</b></div>
+            <div><b>Franchise Offices</b></div>
+            <div>
+                <div>
+                    <div style="width:100%;clear:both">
+                        <div style="float:left;width:200px">Name</div>
+                        <div style="float:left;width:200px">Number of Homes Sold</div>
+                    </div>
+                    <div style="clear:both"></div>
+                    <template is="dom-repeat" items="{{model.Franchises}}">
+                        <starcounter-include partial="{{item}}"></starcounter-include>
+                    </template>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+            <div>
+                <div>New Francise Office</div>
+                <div>
+                    <label>Name</label>
+                    <input value="{{model.NewFranchiseName$::input}}">
+                </div>
+                <button value="{{model.FranchiseSaveTrigger$::click}}" onmousedown="++this.value">Add Franchise</button>
+            </div>
+        </div>
+    </template>
+</template>
