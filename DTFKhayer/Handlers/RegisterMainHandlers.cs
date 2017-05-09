@@ -42,12 +42,32 @@ namespace DTFKhayer
 
             });
 
-            Handle.GET("/DTFKhayer/Franchise/{?}", (string name) =>
+            Handle.GET("/DTFKhayer/Coporation/{?}", (string key) =>
+            {
+                return Db.Scope(() =>
+                {
+                    var corporation = Db.SQL<Corporation>("SELECT p FROM Corporation p where p.ObjectId=?",key).First;
+                    var json = new CorporationPage()
+                    {
+                        Data = corporation
+                    };
+
+                    if (Session.Current == null)
+                    {
+                        Session.Current = new Session(SessionOptions.PatchVersioning);
+                    }
+                    json.Session = Session.Current;
+                    return json;
+                });
+
+            });
+
+            Handle.GET("/DTFKhayer/Franchise/{?}", (string key) =>
             {
                 return Db.Scope(() =>
                 {
 
-                    var franchiseSetting = this._franchiseService.GetFranchise(Uri.UnescapeDataString(name));
+                    var franchiseSetting = this._franchiseService.GetFranchise(key);
                     var json = new FranchiseDetailsPage()
                     {
                         Data = franchiseSetting

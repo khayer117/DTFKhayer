@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using DTFKhayerEntity;
 
-namespace DTFKhayer
+namespace DTFKhayer.Services
 {
-    public interface IFranchiseService
+    public interface ITrendCalculator
     {
-        Franchise GetFranchise(string key);          
+        long Calculate(Franchise franchise);
     }
 }

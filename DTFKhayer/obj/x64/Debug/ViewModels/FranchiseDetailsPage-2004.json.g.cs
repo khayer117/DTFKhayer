@@ -10,42 +10,49 @@ using Starcounter;
 using Starcounter.Internal;
 using Starcounter.Templates;
 using Starcounter.XSON;
+using DTFKhayer.Services;
 using DTFKhayerEntity;
 #pragma warning disable 0108
 #pragma warning disable 1591
 
 namespace DTFKhayer {
+using __FrNumber__ = global::DTFKhayer.FranchiseDetailsPage.Input.Number;
 using __FrCity__ = global::DTFKhayer.FranchiseDetailsPage.Input.City;
-using _ScTemplate_ = Starcounter.Templates.Template;
-using st = Starcounter.Templates;
-using s = Starcounter;
-using __FrSaveRegi__ = global::DTFKhayer.FranchiseDetailsPage.Input.SaveRegisterTrigger;
-using __FrSaveSett__ = global::DTFKhayer.FranchiseDetailsPage.Input.SaveSettingTrigger;
-using __FrCommissi__ = global::DTFKhayer.FranchiseDetailsPage.Input.Commission;
-using __FrPrice__ = global::DTFKhayer.FranchiseDetailsPage.Input.Price;
-using __FrSalesDat__ = global::DTFKhayer.FranchiseDetailsPage.Input.SalesDate;
-using __FrHomeCoun__ = global::DTFKhayer.FranchiseDetailsPage.Input.HomeCountry;
-using __FrHomeCity__ = global::DTFKhayer.FranchiseDetailsPage.Input.HomeCity;
-using __FrHomeZipC__ = global::DTFKhayer.FranchiseDetailsPage.Input.HomeZipCode;
-using __FrHomeNumb__ = global::DTFKhayer.FranchiseDetailsPage.Input.HomeNumber;
-using __FrHomeStre__ = global::DTFKhayer.FranchiseDetailsPage.Input.HomeStreet;
 using __FrCountry__ = global::DTFKhayer.FranchiseDetailsPage.Input.Country;
+using __FrHomeStre__ = global::DTFKhayer.FranchiseDetailsPage.Input.HomeStreet;
+using __FrHomeNumb__ = global::DTFKhayer.FranchiseDetailsPage.Input.HomeNumber;
+using __FrHomeZipC__ = global::DTFKhayer.FranchiseDetailsPage.Input.HomeZipCode;
+using __FrHomeCity__ = global::DTFKhayer.FranchiseDetailsPage.Input.HomeCity;
+using __FrHomeCoun__ = global::DTFKhayer.FranchiseDetailsPage.Input.HomeCountry;
+using __FrZipCode__ = global::DTFKhayer.FranchiseDetailsPage.Input.ZipCode;
+using __FrSalesDat__ = global::DTFKhayer.FranchiseDetailsPage.Input.SalesDate;
+using __FrCommissi__ = global::DTFKhayer.FranchiseDetailsPage.Input.Commission;
+using __FrCoporati__ = global::DTFKhayer.FranchiseDetailsPage.Input.CoporationKey;
+using __FrSaveSett__ = global::DTFKhayer.FranchiseDetailsPage.Input.SaveSettingTrigger;
+using __FrSaveRegi__ = global::DTFKhayer.FranchiseDetailsPage.Input.SaveRegisterTrigger;
+using s = Starcounter;
+using st = Starcounter.Templates;
+using _ScTemplate_ = Starcounter.Templates.Template;
+using __FrPrice__ = global::DTFKhayer.FranchiseDetailsPage.Input.Price;
 using _GEN1_ = System.Diagnostics.DebuggerNonUserCodeAttribute;
 using _GEN2_ = System.CodeDom.Compiler.GeneratedCodeAttribute;
-using __FrNumber__ = global::DTFKhayer.FranchiseDetailsPage.Input.Number;
-using __FrStreet__ = global::DTFKhayer.FranchiseDetailsPage.Input.Street;
 using __FrName__ = global::DTFKhayer.FranchiseDetailsPage.Input.Name;
-using __FrHtml__ = global::DTFKhayer.FranchiseDetailsPage.Input.Html;
-using __Franchis2__ = global::DTFKhayer.FranchiseDetailsPage.Input;
-using __Franchis1__ = global::DTFKhayer.FranchiseDetailsPage.JsonByExample;
-using __TLong__ = global::Starcounter.Templates.TLong;
-using __TString__ = global::Starcounter.Templates.TString;
-using __FrSchema__ = global::DTFKhayer.FranchiseDetailsPage.JsonByExample.Schema;
-using __Json1__ = global::Starcounter.Json.JsonByExample;
-using __TObject__ = global::Starcounter.Templates.TObject;
-using __Json__ = global::Starcounter.Json;
 using __Franchis__ = global::DTFKhayer.FranchiseDetailsPage;
-using __FrZipCode__ = global::DTFKhayer.FranchiseDetailsPage.Input.ZipCode;
+using __Json__ = global::Starcounter.Json;
+using __TObject__ = global::Starcounter.Templates.TObject;
+using __Json1__ = global::Starcounter.Json.JsonByExample;
+using __FrSchema__ = global::DTFKhayer.FranchiseDetailsPage.JsonByExample.Schema;
+using __TString__ = global::Starcounter.Templates.TString;
+using __FrStreet__ = global::DTFKhayer.FranchiseDetailsPage.Input.Street;
+using __TLong__ = global::Starcounter.Templates.TLong;
+using __SaSchema__ = SalesListPage.JsonByExample.Schema;
+using __SalesLis1__ = SalesListPage.JsonByExample;
+using __TArray__ = global::Starcounter.Templates.TArray<SalesListPage>;
+using __Franchis1__ = global::DTFKhayer.FranchiseDetailsPage.JsonByExample;
+using __Arr__ = global::Starcounter.Arr<SalesListPage>;
+using __Franchis2__ = global::DTFKhayer.FranchiseDetailsPage.Input;
+using __FrHtml__ = global::DTFKhayer.FranchiseDetailsPage.Input.Html;
+using __SalesLis__ = SalesListPage;
 
 #line hidden
 [_GEN1_][_GEN2_("Starcounter","2.0")]
@@ -66,6 +73,8 @@ public partial class FranchiseDetailsPage : __Json__ {
     protected override _ScTemplate_ GetDefaultTemplate() { return DefaultTemplate; }
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public new __FrSchema__ Template { get { return (__FrSchema__)base.Template; } set { base.Template = value; } }
+    [_GEN1_][_GEN2_("Starcounter","2.0")]
+    public new Franchise Data { get { return (Franchise)base.Data; } set { base.Data = value; } }
     public override bool IsCodegenerated { get { return true; } }
     #line default
     
@@ -138,6 +147,12 @@ public partial class FranchiseDetailsPage : __Json__ {
                 Commission.DefaultValue = 0L;
                 Commission.Editable = true;
                 Commission.SetCustomAccessors((_p_) => { return ((__Franchis__)_p_).__bf__Commission__; }, (_p_, _v_) => { ((__Franchis__)_p_).__bf__Commission__ = (System.Int64)_v_; }, false);
+                Sales = Add<__TArray__>("Sales");
+                Sales.SetCustomGetElementType((arr) => { return __SalesLis__.DefaultTemplate;});
+                Sales.SetCustomAccessors((_p_) => { return ((__Franchis__)_p_).__bf__Sales__; }, (_p_, _v_) => { ((__Franchis__)_p_).__bf__Sales__ = (__Arr__)_v_; }, false);
+                CoporationKey = Add<__TString__>("CoporationKey");
+                CoporationKey.DefaultValue = "";
+                CoporationKey.SetCustomAccessors((_p_) => { return ((__Franchis__)_p_).__bf__CoporationKey__; }, (_p_, _v_) => { ((__Franchis__)_p_).__bf__CoporationKey__ = (System.String)_v_; }, false);
                 SaveSettingTrigger = Add<__TLong__>("SaveSettingTrigger$");
                 SaveSettingTrigger.DefaultValue = 0L;
                 SaveSettingTrigger.Editable = true;
@@ -165,6 +180,8 @@ public partial class FranchiseDetailsPage : __Json__ {
             public __TString__ SalesDate;
             public __TLong__ Price;
             public __TLong__ Commission;
+            public __TArray__ Sales;
+            public __TString__ CoporationKey;
             public __TLong__ SaveSettingTrigger;
             public __TLong__ SaveRegisterTrigger;
         }
@@ -382,15 +399,43 @@ public partial class FranchiseDetailsPage : __Json__ {
             Template.Commission.Setter(this, value); } }
         #line default
     #line hidden
+    private __Arr__ __bf__Sales__;
+    #line default
+    [_GEN1_][_GEN2_("Starcounter","2.0")]
+    public __Arr__ Sales {
+    #line 20 "ViewModels\FranchiseDetailsPage.json"
+        get {
+        #line hidden
+            return Template.Sales.Getter(this); }
+        #line 20 "ViewModels\FranchiseDetailsPage.json"
+        set {
+        #line hidden
+            Template.Sales.Setter(this, value); } }
+        #line default
+    #line hidden
+    private System.String __bf__CoporationKey__;
+    #line default
+    [_GEN1_][_GEN2_("Starcounter","2.0")]
+    public System.String CoporationKey {
+    #line 22 "ViewModels\FranchiseDetailsPage.json"
+        get {
+        #line hidden
+            return Template.CoporationKey.Getter(this); }
+        #line 22 "ViewModels\FranchiseDetailsPage.json"
+        set {
+        #line hidden
+            Template.CoporationKey.Setter(this, value); } }
+        #line default
+    #line hidden
     private System.Int64 __bf__SaveSettingTrigger__;
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public System.Int64 SaveSettingTrigger {
-    #line 20 "ViewModels\FranchiseDetailsPage.json"
+    #line 24 "ViewModels\FranchiseDetailsPage.json"
         get {
         #line hidden
             return Template.SaveSettingTrigger.Getter(this); }
-        #line 20 "ViewModels\FranchiseDetailsPage.json"
+        #line 24 "ViewModels\FranchiseDetailsPage.json"
         set {
         #line hidden
             Template.SaveSettingTrigger.Setter(this, value); } }
@@ -400,11 +445,11 @@ public partial class FranchiseDetailsPage : __Json__ {
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public System.Int64 SaveRegisterTrigger {
-    #line 21 "ViewModels\FranchiseDetailsPage.json"
+    #line 25 "ViewModels\FranchiseDetailsPage.json"
         get {
         #line hidden
             return Template.SaveRegisterTrigger.Getter(this); }
-        #line 21 "ViewModels\FranchiseDetailsPage.json"
+        #line 25 "ViewModels\FranchiseDetailsPage.json"
         set {
         #line hidden
             Template.SaveRegisterTrigger.Setter(this, value); } }
@@ -486,6 +531,11 @@ public partial class FranchiseDetailsPage : __Json__ {
         
         #line hidden
         public class Commission : Input<__Franchis__, __TLong__, long> {
+        }
+        #line default
+        
+        #line hidden
+        public class CoporationKey : Input<__Franchis__, __TString__, string> {
         }
         #line default
         

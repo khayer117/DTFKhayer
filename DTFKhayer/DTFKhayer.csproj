@@ -71,7 +71,9 @@
     <Compile Include="Services\IFranchiseService.cs" />
     <Compile Include="Services\IHomeService.cs" />
     <Compile Include="Services\ISaleService.cs" />
+    <Compile Include="Services\ITrendCalculator.cs" />
     <Compile Include="Services\SaleService.cs" />
+    <Compile Include="Services\TrendCalculator.cs" />
     <Compile Include="ViewModels\CorporationPage.json.cs">
       <DependentUpon>CorporationPage.json</DependentUpon>
     </Compile>
@@ -80,6 +82,9 @@
     </Compile>
     <Compile Include="ViewModels\FranchiseListPage.json.cs">
       <DependentUpon>FranchiseListPage.json</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\SalesListPage.json.cs">
+      <DependentUpon>SalesListPage.json</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +106,9 @@
     <TypedJSON Include="ViewModels\CorporationPage.json">
       <Generator>MsBuild:Compile</Generator>
     </TypedJSON>
+    <TypedJSON Include="ViewModels\SalesListPage.json">
+      <Generator>MsBuild:Compile</Generator>
+    </TypedJSON>
     <None Include="wwwroot\DTFKhayer\viewmodels\CorporationPage.html" />
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\DTFKhayer\viewmodels\FranchiseDetailsPage.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\DTFKhayer\viewmodels\SalesListPage.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(StarcounterBin)\Starcounter.MsBuild.targets" />

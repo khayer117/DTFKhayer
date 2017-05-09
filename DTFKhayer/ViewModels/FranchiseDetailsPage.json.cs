@@ -1,11 +1,23 @@
 using System;
+using DTFKhayer.Services;
 using DTFKhayerEntity;
 using Starcounter;
 
 namespace DTFKhayer
 {
-    partial class FranchiseDetailsPage : Json
+    partial class FranchiseDetailsPage : Json, IBound<Franchise>
     {
+        protected override void OnData()
+        {
+            base.OnData();
+
+            this.CoporationKey = this.Data.Corporation.GetObjectID();
+        }
+
+        static FranchiseDetailsPage()
+        {
+            DefaultTemplate.Sales.ElementType.InstanceType = typeof(SalesListPage);
+        }
         void Handle(Input.SaveSettingTrigger action)
         {
             Transaction.Commit();
@@ -13,14 +25,12 @@ namespace DTFKhayer
         void Handle(Input.SaveRegisterTrigger action)
         {
             var franchiseService = new FranchiseService();
-            var franchise = franchiseService.GetFranchise("test office");
+            var franchise = franchiseService.GetFranchise(this.Data.GetObjectID());
 
             Db.Transact(() =>
             {
-                // new Home
                 var home = new Home()
                 {
-                    //Franchise = this.Data as Franchise,
                     Franchise = franchise,
                     Street = this.HomeStreet,
                     City = this.HomeCity,
@@ -28,7 +38,6 @@ namespace DTFKhayer
                     Number = this.HomeNumber
                 };
 
-                // new transaction
                 new Sale()
                 {
                     Home = home,
@@ -41,5 +50,15 @@ namespace DTFKhayer
 
             Transaction.Commit();
         }
+
+        //private void ReloadSales()
+        //{
+        //    var franchiseService = new FranchiseService();
+        //    var franchise = franchiseService.GetFranchise("test office");
+
+        //    var salesService = new SaleService();
+
+        //    this.Sales = salesService.GetAllSales() as SalesListPage;
+        //}
     }
 }

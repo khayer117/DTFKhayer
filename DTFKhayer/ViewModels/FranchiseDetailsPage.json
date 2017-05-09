@@ -17,6 +17,10 @@
   "Price$": 0,
   "Commission$": 0,
 
+  "Sales": [ { } ],
+
+  "CoporationKey": "",
+
   "SaveSettingTrigger$": 0,
   "SaveRegisterTrigger$": 0
 }

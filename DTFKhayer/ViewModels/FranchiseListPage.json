@@ -1,4 +1,9 @@
 {
   "Html": "/DTFKhayer/viewmodels/FranchiseListPage.html",
-  "Name": ""
+  "Name": "",
+  "Key": "",
+  "TotalHomeSold": 0,
+  "TotalCommission": 0,
+  "AverageCommission": 0.0,
+  "Trend": 0
 }

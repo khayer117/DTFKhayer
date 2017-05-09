@@ -12,6 +12,14 @@ namespace DTFKhayer
 
         void Handle(Input.SaveCorporationTrigger action)
         {
+            Db.Transact(() =>
+            {
+                new Corporation()
+                {
+                    Name = this.Name
+                };
+            });
+
             Transaction.Commit();
         }
 

@@ -10,25 +10,34 @@ using Starcounter;
 using Starcounter.Internal;
 using Starcounter.Templates;
 using Starcounter.XSON;
+using DTFKhayer.Services;
+using DTFKhayerEntity;
 #pragma warning disable 0108
 #pragma warning disable 1591
 
 namespace DTFKhayer {
-using __Franchis1__ = global::DTFKhayer.FranchiseListPage.JsonByExample;
+using __Franchis2__ = global::DTFKhayer.FranchiseListPage.Input;
 using _ScTemplate_ = Starcounter.Templates.Template;
 using st = Starcounter.Templates;
 using s = Starcounter;
+using __FrTrend__ = global::DTFKhayer.FranchiseListPage.Input.Trend;
+using __FrAverageC__ = global::DTFKhayer.FranchiseListPage.Input.AverageCommission;
+using __FrTotalCom__ = global::DTFKhayer.FranchiseListPage.Input.TotalCommission;
+using __FrTotalHom__ = global::DTFKhayer.FranchiseListPage.Input.TotalHomeSold;
+using __FrKey__ = global::DTFKhayer.FranchiseListPage.Input.Key;
 using __FrName__ = global::DTFKhayer.FranchiseListPage.Input.Name;
 using __FrHtml__ = global::DTFKhayer.FranchiseListPage.Input.Html;
-using __Franchis2__ = global::DTFKhayer.FranchiseListPage.Input;
-using _GEN1_ = System.Diagnostics.DebuggerNonUserCodeAttribute;
 using _GEN2_ = System.CodeDom.Compiler.GeneratedCodeAttribute;
+using __Franchis1__ = global::DTFKhayer.FranchiseListPage.JsonByExample;
+using __TDecimal__ = global::Starcounter.Templates.TDecimal;
+using __TLong__ = global::Starcounter.Templates.TLong;
+using __TString__ = global::Starcounter.Templates.TString;
 using __FrSchema__ = global::DTFKhayer.FranchiseListPage.JsonByExample.Schema;
 using __Json1__ = global::Starcounter.Json.JsonByExample;
 using __TObject__ = global::Starcounter.Templates.TObject;
 using __Json__ = global::Starcounter.Json;
 using __Franchis__ = global::DTFKhayer.FranchiseListPage;
-using __TString__ = global::Starcounter.Templates.TString;
+using _GEN1_ = System.Diagnostics.DebuggerNonUserCodeAttribute;
 
 #line hidden
 [_GEN1_][_GEN2_("Starcounter","2.0")]
@@ -49,6 +58,8 @@ public partial class FranchiseListPage : __Json__ {
     protected override _ScTemplate_ GetDefaultTemplate() { return DefaultTemplate; }
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public new __FrSchema__ Template { get { return (__FrSchema__)base.Template; } set { base.Template = value; } }
+    [_GEN1_][_GEN2_("Starcounter","2.0")]
+    public new Franchise Data { get { return (Franchise)base.Data; } set { base.Data = value; } }
     public override bool IsCodegenerated { get { return true; } }
     #line default
     
@@ -68,10 +79,30 @@ public partial class FranchiseListPage : __Json__ {
                 Name = Add<__TString__>("Name");
                 Name.DefaultValue = "";
                 Name.SetCustomAccessors((_p_) => { return ((__Franchis__)_p_).__bf__Name__; }, (_p_, _v_) => { ((__Franchis__)_p_).__bf__Name__ = (System.String)_v_; }, false);
+                Key = Add<__TString__>("Key");
+                Key.DefaultValue = "";
+                Key.SetCustomAccessors((_p_) => { return ((__Franchis__)_p_).__bf__Key__; }, (_p_, _v_) => { ((__Franchis__)_p_).__bf__Key__ = (System.String)_v_; }, false);
+                TotalHomeSold = Add<__TLong__>("TotalHomeSold");
+                TotalHomeSold.DefaultValue = 0L;
+                TotalHomeSold.SetCustomAccessors((_p_) => { return ((__Franchis__)_p_).__bf__TotalHomeSold__; }, (_p_, _v_) => { ((__Franchis__)_p_).__bf__TotalHomeSold__ = (System.Int64)_v_; }, false);
+                TotalCommission = Add<__TLong__>("TotalCommission");
+                TotalCommission.DefaultValue = 0L;
+                TotalCommission.SetCustomAccessors((_p_) => { return ((__Franchis__)_p_).__bf__TotalCommission__; }, (_p_, _v_) => { ((__Franchis__)_p_).__bf__TotalCommission__ = (System.Int64)_v_; }, false);
+                AverageCommission = Add<__TDecimal__>("AverageCommission");
+                AverageCommission.DefaultValue = 0.0m;
+                AverageCommission.SetCustomAccessors((_p_) => { return ((__Franchis__)_p_).__bf__AverageCommission__; }, (_p_, _v_) => { ((__Franchis__)_p_).__bf__AverageCommission__ = (System.Decimal)_v_; }, false);
+                Trend = Add<__TLong__>("Trend");
+                Trend.DefaultValue = 0L;
+                Trend.SetCustomAccessors((_p_) => { return ((__Franchis__)_p_).__bf__Trend__; }, (_p_, _v_) => { ((__Franchis__)_p_).__bf__Trend__ = (System.Int64)_v_; }, false);
             }
             public override object CreateInstance(s.Json parent) { return new __Franchis__(this) { Parent = parent }; }
             public __TString__ Html;
             public __TString__ Name;
+            public __TString__ Key;
+            public __TLong__ TotalHomeSold;
+            public __TLong__ TotalCommission;
+            public __TDecimal__ AverageCommission;
+            public __TLong__ Trend;
         }
         #line default
     }
@@ -104,6 +135,76 @@ public partial class FranchiseListPage : __Json__ {
         #line hidden
             Template.Name.Setter(this, value); } }
         #line default
+    #line hidden
+    private System.String __bf__Key__;
+    #line default
+    [_GEN1_][_GEN2_("Starcounter","2.0")]
+    public System.String Key {
+    #line 4 "ViewModels\FranchiseListPage.json"
+        get {
+        #line hidden
+            return Template.Key.Getter(this); }
+        #line 4 "ViewModels\FranchiseListPage.json"
+        set {
+        #line hidden
+            Template.Key.Setter(this, value); } }
+        #line default
+    #line hidden
+    private System.Int64 __bf__TotalHomeSold__;
+    #line default
+    [_GEN1_][_GEN2_("Starcounter","2.0")]
+    public System.Int64 TotalHomeSold {
+    #line 5 "ViewModels\FranchiseListPage.json"
+        get {
+        #line hidden
+            return Template.TotalHomeSold.Getter(this); }
+        #line 5 "ViewModels\FranchiseListPage.json"
+        set {
+        #line hidden
+            Template.TotalHomeSold.Setter(this, value); } }
+        #line default
+    #line hidden
+    private System.Int64 __bf__TotalCommission__;
+    #line default
+    [_GEN1_][_GEN2_("Starcounter","2.0")]
+    public System.Int64 TotalCommission {
+    #line 6 "ViewModels\FranchiseListPage.json"
+        get {
+        #line hidden
+            return Template.TotalCommission.Getter(this); }
+        #line 6 "ViewModels\FranchiseListPage.json"
+        set {
+        #line hidden
+            Template.TotalCommission.Setter(this, value); } }
+        #line default
+    #line hidden
+    private System.Decimal __bf__AverageCommission__;
+    #line default
+    [_GEN1_][_GEN2_("Starcounter","2.0")]
+    public System.Decimal AverageCommission {
+    #line 7 "ViewModels\FranchiseListPage.json"
+        get {
+        #line hidden
+            return Template.AverageCommission.Getter(this); }
+        #line 7 "ViewModels\FranchiseListPage.json"
+        set {
+        #line hidden
+            Template.AverageCommission.Setter(this, value); } }
+        #line default
+    #line hidden
+    private System.Int64 __bf__Trend__;
+    #line default
+    [_GEN1_][_GEN2_("Starcounter","2.0")]
+    public System.Int64 Trend {
+    #line 8 "ViewModels\FranchiseListPage.json"
+        get {
+        #line hidden
+            return Template.Trend.Getter(this); }
+        #line 8 "ViewModels\FranchiseListPage.json"
+        set {
+        #line hidden
+            Template.Trend.Setter(this, value); } }
+        #line default
     
     #line hidden
     [_GEN1_][_GEN2_("Starcounter","2.0")]
@@ -116,6 +217,31 @@ public partial class FranchiseListPage : __Json__ {
         
         #line hidden
         public class Name : Input<__Franchis__, __TString__, string> {
+        }
+        #line default
+        
+        #line hidden
+        public class Key : Input<__Franchis__, __TString__, string> {
+        }
+        #line default
+        
+        #line hidden
+        public class TotalHomeSold : Input<__Franchis__, __TLong__, long> {
+        }
+        #line default
+        
+        #line hidden
+        public class TotalCommission : Input<__Franchis__, __TLong__, long> {
+        }
+        #line default
+        
+        #line hidden
+        public class AverageCommission : Input<__Franchis__, __TDecimal__, Decimal> {
+        }
+        #line default
+        
+        #line hidden
+        public class Trend : Input<__Franchis__, __TLong__, long> {
         }
         #line default
     }

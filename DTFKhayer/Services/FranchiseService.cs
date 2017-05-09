@@ -10,9 +10,9 @@ namespace DTFKhayer
 {
     public class FranchiseService : IFranchiseService
     {
-        public Franchise GetFranchise(string name)
+        public Franchise GetFranchise(string key)
         {
-            return Db.SQL<Franchise>("SELECT f FROM Franchise f WHERE f.name =?",name).First;
+            return Db.SQL<Franchise>("SELECT f FROM Franchise f WHERE f.ObjectId =?", key).First;
         }
     }
 }

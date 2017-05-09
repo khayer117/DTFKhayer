@@ -2,7 +2,7 @@
 
 <template>
     <template is="dom-bind">
-        <div><a href="/DTFKhayer"><< Back</a></div>
+        <div><a href="/DTFKhayer/Coporation/{{model.CoporationKey}}"><< Back</a></div>
 
         <div><b>Setting: {{model.Name}}</b></div>
         <div>Edit Franchise Setting</div>
@@ -30,7 +30,7 @@
             <h3>Transaction Info</h3>
         </div>
 
-        <div>Date: <input value="{{model.SalesDate$::input}}">
+        <div>Date[yyyy-mm-dd]: <input value="{{model.SalesDate$::input}}">
         </div>
         <div>Sales price: <input value="{{model.Price$::input}}">
         </div>
@@ -39,6 +39,24 @@
 
         <div>
             <button value="{{model.SaveRegisterTrigger$::click}}" onmousedown="++this.value">Register</button>
+        </div>
+
+        <div><b>List of Transaction</b>
+        </div>
+        <div>
+            <div>
+                <div style="width:100%;clear:both">
+                    <div style="float:left;width:200px">Date</div>
+                    <div style="float: left; width: 200px">Sales Price</div>
+                    <div style="float: left; width: 200px">Commission</div>
+                    <div style="float:left;width:200px">Address</div>
+                </div>
+                <div style="clear:both"></div>
+                <template is="dom-repeat" items="{{model.Sales}}">
+                    <starcounter-include partial="{{item}}"></starcounter-include>
+                </template>
+                <div style="clear:both"></div>
+            </div>
         </div>
 
     </template>
