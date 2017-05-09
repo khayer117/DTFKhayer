@@ -67,7 +67,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FranchiseService.cs" />
+    <Compile Include="Services\HomeService.cs" />
     <Compile Include="Services\IFranchiseService.cs" />
+    <Compile Include="Services\IHomeService.cs" />
+    <Compile Include="Services\ISaleService.cs" />
+    <Compile Include="Services\SaleService.cs" />
     <Compile Include="ViewModels\CorporationPage.json.cs">
       <DependentUpon>CorporationPage.json</DependentUpon>
     </Compile>

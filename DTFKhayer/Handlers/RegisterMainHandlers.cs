@@ -46,7 +46,8 @@ namespace DTFKhayer
             {
                 return Db.Scope(() =>
                 {
-                    var franchiseSetting = this._franchiseService.GetFranchise(name);
+
+                    var franchiseSetting = this._franchiseService.GetFranchise(Uri.UnescapeDataString(name));
                     var json = new FranchiseDetailsPage()
                     {
                         Data = franchiseSetting

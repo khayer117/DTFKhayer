@@ -9,8 +9,37 @@
         <div>Name: <input value="{{model.Name$::input}}"></div> 
         <div>Street: <input value="{{model.Street$::input}}"></div> 
         <div>Number: <input value="{{model.Number$::input}}"></div> 
-        <div>City: <input value="{{model.City$::input}}"></div> 
-        <div>Country: <input value="{{model.Country$::input}}"></div>
-        <div><button value="{{model.SaveSettingTrigger$::click}}" onmousedown="++this.value">Save</button></div> 
+        <div>City: <input value="{{model.City$::input}}"></div>
+        <div>Country: <input value="{{model.Country$::input}}">
+        </div>
+
+        <div><button value="{{model.SaveSettingTrigger$::click}}" onmousedown="++this.value">Save</button>
+        </div>
+
+        <div>
+            <h3>Register new Home of Sales</h3>
+        </div>
+
+        <div>Street: <input value="{{model.HomeStreet$::input}}"></div>
+        <div>Number: <input value="{{model.HomeNumber$::input}}"></div>
+        <div>City: <input value="{{model.HomeCity$::input}}"></div>
+        <div>Country: <input value="{{model.HomeCountry$::input}}">
+        </div>
+
+        <div>
+            <h3>Transaction Info</h3>
+        </div>
+
+        <div>Date: <input value="{{model.SalesDate$::input}}">
+        </div>
+        <div>Sales price: <input value="{{model.Price$::input}}">
+        </div>
+        <div>Commmission: <input value="{{model.Commission$::input}}">
+        </div>
+
+        <div>
+            <button value="{{model.SaveRegisterTrigger$::click}}" onmousedown="++this.value">Register</button>
+        </div>
+
     </template>
 </template>
