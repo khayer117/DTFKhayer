@@ -2,7 +2,7 @@
 
 <template>
     <template is="dom-bind">
-        <div><a href="/DTFKhayer/Coporation/{{model.CoporationKey}}"><< Back</a></div>
+        <div><a href="/DTFKhayer"><< Back</a></div>
 
         <div><b>Setting: {{model.Name}}</b></div>
         <div>Edit Franchise Setting</div>
@@ -12,6 +12,7 @@
         <div>City: <input value="{{model.City$::input}}"></div>
         <div>Country: <input value="{{model.Country$::input}}">
         </div>
+        <div>Address: {{model.Address}}</div>
 
         <div><button value="{{model.SaveSettingTrigger$::click}}" onmousedown="++this.value">Save</button>
         </div>

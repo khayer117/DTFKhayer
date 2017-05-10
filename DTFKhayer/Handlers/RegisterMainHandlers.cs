@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTFKhayer.ViewModels;
 using DTFKhayerEntity;
 
 namespace DTFKhayer
@@ -26,8 +27,12 @@ namespace DTFKhayer
             {
                 return Db.Scope(() =>
                 {
-                    var corporation = Db.SQL<Corporation>("SELECT p FROM Corporation p").First;
-                    var json = new CorporationPage()
+                    //var corporation = Db.SQL<Corporation>("SELECT p FROM Corporation p").First;
+                    var corporation = new Corporation()
+                    {
+                        Name = ""
+                    };
+                    var json = new SetupPage()
                     {
                         Data = corporation
                     };
@@ -47,7 +52,7 @@ namespace DTFKhayer
                 return Db.Scope(() =>
                 {
                     var corporation = Db.SQL<Corporation>("SELECT p FROM Corporation p where p.ObjectId=?",key).First;
-                    var json = new CorporationPage()
+                    var json = new SetupPage()
                     {
                         Data = corporation
                     };

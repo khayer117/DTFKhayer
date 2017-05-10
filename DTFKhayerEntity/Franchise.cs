@@ -18,6 +18,8 @@ namespace DTFKhayerEntity
         public string City { get; set; }
         public string Country { get; set; }
 
+        public string Address => $"{Street},{Number},{City},{Country}";
+
         public QueryResultRows<Sale> Sales => Db.SQL<Sale>("SELECT f FROM Sale f WHERE f.Franchise = ?", this);
     }
 }

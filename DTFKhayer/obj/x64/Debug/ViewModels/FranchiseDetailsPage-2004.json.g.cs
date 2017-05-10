@@ -17,14 +17,14 @@ using DTFKhayerEntity;
 
 namespace DTFKhayer {
 using __FrNumber__ = global::DTFKhayer.FranchiseDetailsPage.Input.Number;
-using __FrCity__ = global::DTFKhayer.FranchiseDetailsPage.Input.City;
 using __FrCountry__ = global::DTFKhayer.FranchiseDetailsPage.Input.Country;
+using __FrAddress__ = global::DTFKhayer.FranchiseDetailsPage.Input.Address;
 using __FrHomeStre__ = global::DTFKhayer.FranchiseDetailsPage.Input.HomeStreet;
 using __FrHomeNumb__ = global::DTFKhayer.FranchiseDetailsPage.Input.HomeNumber;
 using __FrHomeZipC__ = global::DTFKhayer.FranchiseDetailsPage.Input.HomeZipCode;
 using __FrHomeCity__ = global::DTFKhayer.FranchiseDetailsPage.Input.HomeCity;
 using __FrHomeCoun__ = global::DTFKhayer.FranchiseDetailsPage.Input.HomeCountry;
-using __FrZipCode__ = global::DTFKhayer.FranchiseDetailsPage.Input.ZipCode;
+using __FrCity__ = global::DTFKhayer.FranchiseDetailsPage.Input.City;
 using __FrSalesDat__ = global::DTFKhayer.FranchiseDetailsPage.Input.SalesDate;
 using __FrCommissi__ = global::DTFKhayer.FranchiseDetailsPage.Input.Commission;
 using __FrCoporati__ = global::DTFKhayer.FranchiseDetailsPage.Input.CoporationKey;
@@ -34,25 +34,26 @@ using s = Starcounter;
 using st = Starcounter.Templates;
 using _ScTemplate_ = Starcounter.Templates.Template;
 using __FrPrice__ = global::DTFKhayer.FranchiseDetailsPage.Input.Price;
-using _GEN1_ = System.Diagnostics.DebuggerNonUserCodeAttribute;
+using __FrZipCode__ = global::DTFKhayer.FranchiseDetailsPage.Input.ZipCode;
 using _GEN2_ = System.CodeDom.Compiler.GeneratedCodeAttribute;
-using __FrName__ = global::DTFKhayer.FranchiseDetailsPage.Input.Name;
+using __FrStreet__ = global::DTFKhayer.FranchiseDetailsPage.Input.Street;
 using __Franchis__ = global::DTFKhayer.FranchiseDetailsPage;
 using __Json__ = global::Starcounter.Json;
 using __TObject__ = global::Starcounter.Templates.TObject;
 using __Json1__ = global::Starcounter.Json.JsonByExample;
 using __FrSchema__ = global::DTFKhayer.FranchiseDetailsPage.JsonByExample.Schema;
 using __TString__ = global::Starcounter.Templates.TString;
-using __FrStreet__ = global::DTFKhayer.FranchiseDetailsPage.Input.Street;
 using __TLong__ = global::Starcounter.Templates.TLong;
-using __SaSchema__ = SalesListPage.JsonByExample.Schema;
+using _GEN1_ = System.Diagnostics.DebuggerNonUserCodeAttribute;
+using __SalesLis__ = SalesListPage;
 using __SalesLis1__ = SalesListPage.JsonByExample;
 using __TArray__ = global::Starcounter.Templates.TArray<SalesListPage>;
 using __Franchis1__ = global::DTFKhayer.FranchiseDetailsPage.JsonByExample;
 using __Arr__ = global::Starcounter.Arr<SalesListPage>;
 using __Franchis2__ = global::DTFKhayer.FranchiseDetailsPage.Input;
 using __FrHtml__ = global::DTFKhayer.FranchiseDetailsPage.Input.Html;
-using __SalesLis__ = SalesListPage;
+using __FrName__ = global::DTFKhayer.FranchiseDetailsPage.Input.Name;
+using __SaSchema__ = SalesListPage.JsonByExample.Schema;
 
 #line hidden
 [_GEN1_][_GEN2_("Starcounter","2.0")]
@@ -115,6 +116,9 @@ public partial class FranchiseDetailsPage : __Json__ {
                 Country.DefaultValue = "";
                 Country.Editable = true;
                 Country.SetCustomAccessors((_p_) => { return ((__Franchis__)_p_).__bf__Country__; }, (_p_, _v_) => { ((__Franchis__)_p_).__bf__Country__ = (System.String)_v_; }, false);
+                Address = Add<__TString__>("Address");
+                Address.DefaultValue = "";
+                Address.SetCustomAccessors((_p_) => { return ((__Franchis__)_p_).__bf__Address__; }, (_p_, _v_) => { ((__Franchis__)_p_).__bf__Address__ = (System.String)_v_; }, false);
                 HomeStreet = Add<__TString__>("HomeStreet$");
                 HomeStreet.DefaultValue = "";
                 HomeStreet.Editable = true;
@@ -172,6 +176,7 @@ public partial class FranchiseDetailsPage : __Json__ {
             public __TString__ ZipCode;
             public __TString__ City;
             public __TString__ Country;
+            public __TString__ Address;
             public __TString__ HomeStreet;
             public __TString__ HomeNumber;
             public __TString__ HomeZipCode;
@@ -287,15 +292,29 @@ public partial class FranchiseDetailsPage : __Json__ {
             Template.Country.Setter(this, value); } }
         #line default
     #line hidden
+    private System.String __bf__Address__;
+    #line default
+    [_GEN1_][_GEN2_("Starcounter","2.0")]
+    public System.String Address {
+    #line 9 "ViewModels\FranchiseDetailsPage.json"
+        get {
+        #line hidden
+            return Template.Address.Getter(this); }
+        #line 9 "ViewModels\FranchiseDetailsPage.json"
+        set {
+        #line hidden
+            Template.Address.Setter(this, value); } }
+        #line default
+    #line hidden
     private System.String __bf__HomeStreet__;
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public System.String HomeStreet {
-    #line 10 "ViewModels\FranchiseDetailsPage.json"
+    #line 11 "ViewModels\FranchiseDetailsPage.json"
         get {
         #line hidden
             return Template.HomeStreet.Getter(this); }
-        #line 10 "ViewModels\FranchiseDetailsPage.json"
+        #line 11 "ViewModels\FranchiseDetailsPage.json"
         set {
         #line hidden
             Template.HomeStreet.Setter(this, value); } }
@@ -305,11 +324,11 @@ public partial class FranchiseDetailsPage : __Json__ {
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public System.String HomeNumber {
-    #line 11 "ViewModels\FranchiseDetailsPage.json"
+    #line 12 "ViewModels\FranchiseDetailsPage.json"
         get {
         #line hidden
             return Template.HomeNumber.Getter(this); }
-        #line 11 "ViewModels\FranchiseDetailsPage.json"
+        #line 12 "ViewModels\FranchiseDetailsPage.json"
         set {
         #line hidden
             Template.HomeNumber.Setter(this, value); } }
@@ -319,11 +338,11 @@ public partial class FranchiseDetailsPage : __Json__ {
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public System.String HomeZipCode {
-    #line 12 "ViewModels\FranchiseDetailsPage.json"
+    #line 13 "ViewModels\FranchiseDetailsPage.json"
         get {
         #line hidden
             return Template.HomeZipCode.Getter(this); }
-        #line 12 "ViewModels\FranchiseDetailsPage.json"
+        #line 13 "ViewModels\FranchiseDetailsPage.json"
         set {
         #line hidden
             Template.HomeZipCode.Setter(this, value); } }
@@ -333,11 +352,11 @@ public partial class FranchiseDetailsPage : __Json__ {
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public System.String HomeCity {
-    #line 13 "ViewModels\FranchiseDetailsPage.json"
+    #line 14 "ViewModels\FranchiseDetailsPage.json"
         get {
         #line hidden
             return Template.HomeCity.Getter(this); }
-        #line 13 "ViewModels\FranchiseDetailsPage.json"
+        #line 14 "ViewModels\FranchiseDetailsPage.json"
         set {
         #line hidden
             Template.HomeCity.Setter(this, value); } }
@@ -347,11 +366,11 @@ public partial class FranchiseDetailsPage : __Json__ {
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public System.String HomeCountry {
-    #line 14 "ViewModels\FranchiseDetailsPage.json"
+    #line 15 "ViewModels\FranchiseDetailsPage.json"
         get {
         #line hidden
             return Template.HomeCountry.Getter(this); }
-        #line 14 "ViewModels\FranchiseDetailsPage.json"
+        #line 15 "ViewModels\FranchiseDetailsPage.json"
         set {
         #line hidden
             Template.HomeCountry.Setter(this, value); } }
@@ -361,11 +380,11 @@ public partial class FranchiseDetailsPage : __Json__ {
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public System.String SalesDate {
-    #line 16 "ViewModels\FranchiseDetailsPage.json"
+    #line 17 "ViewModels\FranchiseDetailsPage.json"
         get {
         #line hidden
             return Template.SalesDate.Getter(this); }
-        #line 16 "ViewModels\FranchiseDetailsPage.json"
+        #line 17 "ViewModels\FranchiseDetailsPage.json"
         set {
         #line hidden
             Template.SalesDate.Setter(this, value); } }
@@ -375,11 +394,11 @@ public partial class FranchiseDetailsPage : __Json__ {
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public System.Int64 Price {
-    #line 17 "ViewModels\FranchiseDetailsPage.json"
+    #line 18 "ViewModels\FranchiseDetailsPage.json"
         get {
         #line hidden
             return Template.Price.Getter(this); }
-        #line 17 "ViewModels\FranchiseDetailsPage.json"
+        #line 18 "ViewModels\FranchiseDetailsPage.json"
         set {
         #line hidden
             Template.Price.Setter(this, value); } }
@@ -389,11 +408,11 @@ public partial class FranchiseDetailsPage : __Json__ {
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public System.Int64 Commission {
-    #line 18 "ViewModels\FranchiseDetailsPage.json"
+    #line 19 "ViewModels\FranchiseDetailsPage.json"
         get {
         #line hidden
             return Template.Commission.Getter(this); }
-        #line 18 "ViewModels\FranchiseDetailsPage.json"
+        #line 19 "ViewModels\FranchiseDetailsPage.json"
         set {
         #line hidden
             Template.Commission.Setter(this, value); } }
@@ -403,11 +422,11 @@ public partial class FranchiseDetailsPage : __Json__ {
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public __Arr__ Sales {
-    #line 20 "ViewModels\FranchiseDetailsPage.json"
+    #line 21 "ViewModels\FranchiseDetailsPage.json"
         get {
         #line hidden
             return Template.Sales.Getter(this); }
-        #line 20 "ViewModels\FranchiseDetailsPage.json"
+        #line 21 "ViewModels\FranchiseDetailsPage.json"
         set {
         #line hidden
             Template.Sales.Setter(this, value); } }
@@ -417,11 +436,11 @@ public partial class FranchiseDetailsPage : __Json__ {
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public System.String CoporationKey {
-    #line 22 "ViewModels\FranchiseDetailsPage.json"
+    #line 23 "ViewModels\FranchiseDetailsPage.json"
         get {
         #line hidden
             return Template.CoporationKey.Getter(this); }
-        #line 22 "ViewModels\FranchiseDetailsPage.json"
+        #line 23 "ViewModels\FranchiseDetailsPage.json"
         set {
         #line hidden
             Template.CoporationKey.Setter(this, value); } }
@@ -431,11 +450,11 @@ public partial class FranchiseDetailsPage : __Json__ {
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public System.Int64 SaveSettingTrigger {
-    #line 24 "ViewModels\FranchiseDetailsPage.json"
+    #line 25 "ViewModels\FranchiseDetailsPage.json"
         get {
         #line hidden
             return Template.SaveSettingTrigger.Getter(this); }
-        #line 24 "ViewModels\FranchiseDetailsPage.json"
+        #line 25 "ViewModels\FranchiseDetailsPage.json"
         set {
         #line hidden
             Template.SaveSettingTrigger.Setter(this, value); } }
@@ -445,11 +464,11 @@ public partial class FranchiseDetailsPage : __Json__ {
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public System.Int64 SaveRegisterTrigger {
-    #line 25 "ViewModels\FranchiseDetailsPage.json"
+    #line 26 "ViewModels\FranchiseDetailsPage.json"
         get {
         #line hidden
             return Template.SaveRegisterTrigger.Getter(this); }
-        #line 25 "ViewModels\FranchiseDetailsPage.json"
+        #line 26 "ViewModels\FranchiseDetailsPage.json"
         set {
         #line hidden
             Template.SaveRegisterTrigger.Setter(this, value); } }
@@ -491,6 +510,11 @@ public partial class FranchiseDetailsPage : __Json__ {
         
         #line hidden
         public class Country : Input<__Franchis__, __TString__, string> {
+        }
+        #line default
+        
+        #line hidden
+        public class Address : Input<__Franchis__, __TString__, string> {
         }
         #line default
         

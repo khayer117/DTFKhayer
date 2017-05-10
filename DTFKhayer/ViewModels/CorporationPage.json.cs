@@ -10,19 +10,6 @@ namespace DTFKhayer
             DefaultTemplate.Franchises.ElementType.InstanceType = typeof(FranchiseListPage);
         }
 
-        void Handle(Input.SaveCorporationTrigger action)
-        {
-            Db.Transact(() =>
-            {
-                new Corporation()
-                {
-                    Name = this.Name
-                };
-            });
-
-            Transaction.Commit();
-        }
-
         void Handle(Input.FranchiseSaveTrigger action)
         {
             new Franchise()

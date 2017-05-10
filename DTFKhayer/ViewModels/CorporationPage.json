@@ -1,8 +1,7 @@
 {
   "Html": "/DTFKhayer/viewmodels/CorporationPage.html",
-  "Name$": "",
   "Franchises": [ {} ],
+  "Name": "",
   "NewFranchiseName$": "",
-  "SaveCorporationTrigger$": 0,
   "FranchiseSaveTrigger$": 0
 }
