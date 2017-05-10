@@ -10,6 +10,7 @@ using Starcounter;
 using Starcounter.Internal;
 using Starcounter.Templates;
 using Starcounter.XSON;
+using System.Linq;
 using DTFKhayerEntity;
 #pragma warning disable 0108
 #pragma warning disable 1591
@@ -20,6 +21,7 @@ using _ScTemplate_ = Starcounter.Templates.Template;
 using st = Starcounter.Templates;
 using s = Starcounter;
 using __SeSaveCorp__ = global::DTFKhayer.ViewModels.SetupPage.Input.SaveCorporationTrigger;
+using __SeIsShowCo__ = global::DTFKhayer.ViewModels.SetupPage.Input.IsShowCorporate;
 using __SeName__ = global::DTFKhayer.ViewModels.SetupPage.Input.Name;
 using __SeHtml__ = global::DTFKhayer.ViewModels.SetupPage.Input.Html;
 using __SetupPag2__ = global::DTFKhayer.ViewModels.SetupPage.Input;
@@ -30,6 +32,7 @@ using _GEN2_ = System.CodeDom.Compiler.GeneratedCodeAttribute;
 using __Corporat1__ = CorporationPage.JsonByExample;
 using __CoSchema__ = CorporationPage.JsonByExample.Schema;
 using __Corporat__ = CorporationPage;
+using __TBool__ = global::Starcounter.Templates.TBool;
 using __TString__ = global::Starcounter.Templates.TString;
 using __SeSchema__ = global::DTFKhayer.ViewModels.SetupPage.JsonByExample.Schema;
 using __Json1__ = global::Starcounter.Json.JsonByExample;
@@ -79,6 +82,9 @@ public partial class SetupPage : __Json__ {
                 Name.DefaultValue = "";
                 Name.Editable = true;
                 Name.SetCustomAccessors((_p_) => { return ((__SetupPag__)_p_).__bf__Name__; }, (_p_, _v_) => { ((__SetupPag__)_p_).__bf__Name__ = (System.String)_v_; }, false);
+                IsShowCorporate = Add<__TBool__>("IsShowCorporate");
+                IsShowCorporate.DefaultValue = false;
+                IsShowCorporate.SetCustomAccessors((_p_) => { return ((__SetupPag__)_p_).__bf__IsShowCorporate__; }, (_p_, _v_) => { ((__SetupPag__)_p_).__bf__IsShowCorporate__ = (System.Boolean)_v_; }, false);
                 Corporates = Add<__TArray__>("Corporates");
                 Corporates.SetCustomGetElementType((arr) => { return __Corporat__.DefaultTemplate;});
                 Corporates.SetCustomAccessors((_p_) => { return ((__SetupPag__)_p_).__bf__Corporates__; }, (_p_, _v_) => { ((__SetupPag__)_p_).__bf__Corporates__ = (__Arr__)_v_; }, false);
@@ -91,6 +97,7 @@ public partial class SetupPage : __Json__ {
             public override object CreateInstance(s.Json parent) { return new __SetupPag__(this) { Parent = parent }; }
             public __TString__ Html;
             public __TString__ Name;
+            public __TBool__ IsShowCorporate;
             public __TArray__ Corporates;
             public __TLong__ SaveCorporationTrigger;
         }
@@ -126,15 +133,29 @@ public partial class SetupPage : __Json__ {
             Template.Name.Setter(this, value); } }
         #line default
     #line hidden
+    private System.Boolean __bf__IsShowCorporate__;
+    #line default
+    [_GEN1_][_GEN2_("Starcounter","2.0")]
+    public System.Boolean IsShowCorporate {
+    #line 4 "ViewModels\SetupPage.json"
+        get {
+        #line hidden
+            return Template.IsShowCorporate.Getter(this); }
+        #line 4 "ViewModels\SetupPage.json"
+        set {
+        #line hidden
+            Template.IsShowCorporate.Setter(this, value); } }
+        #line default
+    #line hidden
     private __Arr__ __bf__Corporates__;
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public __Arr__ Corporates {
-    #line 4 "ViewModels\SetupPage.json"
+    #line 5 "ViewModels\SetupPage.json"
         get {
         #line hidden
             return Template.Corporates.Getter(this); }
-        #line 4 "ViewModels\SetupPage.json"
+        #line 5 "ViewModels\SetupPage.json"
         set {
         #line hidden
             Template.Corporates.Setter(this, value); } }
@@ -144,11 +165,11 @@ public partial class SetupPage : __Json__ {
     #line default
     [_GEN1_][_GEN2_("Starcounter","2.0")]
     public System.Int64 SaveCorporationTrigger {
-    #line 5 "ViewModels\SetupPage.json"
+    #line 6 "ViewModels\SetupPage.json"
         get {
         #line hidden
             return Template.SaveCorporationTrigger.Getter(this); }
-        #line 5 "ViewModels\SetupPage.json"
+        #line 6 "ViewModels\SetupPage.json"
         set {
         #line hidden
             Template.SaveCorporationTrigger.Setter(this, value); } }
@@ -165,6 +186,11 @@ public partial class SetupPage : __Json__ {
         
         #line hidden
         public class Name : Input<__SetupPag__, __TString__, string> {
+        }
+        #line default
+        
+        #line hidden
+        public class IsShowCorporate : Input<__SetupPag__, __TBool__, bool> {
         }
         #line default
         

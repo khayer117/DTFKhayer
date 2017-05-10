@@ -9,11 +9,14 @@
             <input value="{{model.Name$::input}}">
         </div>
         <button value="{{model.SaveCorporationTrigger$::click}}" onmousedown="++this.value">Create Corporation</button>
-        <div style="height: 50px">&nbsp;</div>
+        <div style="height: 100px">&nbsp;</div>
 
-        <div><b>Real Estate Estate Stars</b></div>
-        <template is="dom-repeat" items="{{model.Corporates}}">
-            <starcounter-include partial="{{item}}"></starcounter-include>
+        <template is="dom-if" if="{{model.IsShowCorporate}}">
+            <div><b>Real Estate Estate Stars</b></div>
+            <template is="dom-repeat" items="{{model.Corporates}}">
+                <starcounter-include partial="{{item}}"></starcounter-include>
+            </template>
         </template>
+
     </template>
 </template>

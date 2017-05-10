@@ -62,6 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\TrendDataItem.cs" />
     <Compile Include="Handlers\IHandler.cs" />
     <Compile Include="Handlers\RegisterMainHandlers.cs" />
     <Compile Include="Program.cs" />

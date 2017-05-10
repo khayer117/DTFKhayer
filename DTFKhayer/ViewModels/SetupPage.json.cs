@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using DTFKhayerEntity;
 using Starcounter;
 
@@ -18,14 +20,16 @@ namespace DTFKhayer.ViewModels
 
         void Handle(Input.SaveCorporationTrigger action)
         {
-
+            this.Data.EntryDate = DateTime.Now;
             Transaction.Commit();
             LoadCorporates();
         }
 
         private void LoadCorporates()
         {
-            this.Corporates = Db.SQL<Corporation>("SELECT c FROM Corporation c");
+            this.Corporates = Db.SQL<Corporation>("SELECT c FROM Corporation c ORDER BY c.EntryDate");
+
+            this.IsShowCorporate = this.Corporates.Where(item=>!string.IsNullOrEmpty(item.Name)).ToList().Count > 0;
         }
 
     }

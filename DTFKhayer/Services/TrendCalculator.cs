@@ -11,8 +11,8 @@ namespace DTFKhayer.Services
 {
     public class TrendCalculator:ITrendCalculator
     {
-        private long Weight = 100000000000000;
-        public long Calculate(IDictionary<long, long> values)
+        private decimal Weight = .01m;
+        public long Calculate(IEnumerable<TrendDataItem> values)
         {
             var avgSlope = GetAvgSlope(values);
 
@@ -21,12 +21,12 @@ namespace DTFKhayer.Services
             return trend;
         }
 
-        private decimal GetAvgSlope(IDictionary<long, long> values)
+        private decimal GetAvgSlope(IEnumerable<TrendDataItem> values)
         {
             var slopes = new List<decimal>();
 
             var counter = 1;
-            var prevValue = new KeyValuePair<long, long>();
+            var prevValue = new TrendDataItem();
 
             foreach (var value in values)
             {
@@ -37,16 +37,16 @@ namespace DTFKhayer.Services
                     continue;
                 }
 
-                var x1 = prevValue.Key;
-                var y1 = prevValue.Value;
-                var x2 = value.Key;
-                var y2 = value.Value;
+                var x1 = prevValue.X;
+                var y1 = prevValue.Y;
+                var x2 = value.X;
+                var y2 = value.Y;
                 var slope = 0m;
 
-                var diffX = (x1 - x2);
+                var diffX = Math.Abs((x2 - x1));
                 if (diffX != 0)
                 {
-                    slope = Math.Abs((y1 - y2)/(decimal)diffX);
+                    slope = (y2 - y1)/(decimal)diffX;
                 }
                 slopes.Add(slope);
 

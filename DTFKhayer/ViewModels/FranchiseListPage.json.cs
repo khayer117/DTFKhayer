@@ -49,16 +49,13 @@ namespace DTFKhayer
         {
             var sales = Db.SQL<Sale>("SELECT s FROM Sale s WHERE s.Franchise = ? ORDER BY s.SalesDate", franchise);
 
-            var values = new Dictionary<long,long>();
+            var minSalesDate = sales.Any()? sales.Min(s => s.SalesDate):DateTime.Today;
 
-            foreach (Sale item in sales)
+            var values = sales.GroupBy(d=>d.SalesDate).Select(item => new TrendDataItem()
             {
-                if (!values.ContainsKey(item.SalesDate.Ticks))
-                {
-                    values.Add(item.SalesDate.Ticks, item.Commission);
-                }
-
-            }
+                X = (item.Key-minSalesDate).Days,
+                Y = item.Sum(c=>c.Commission)
+            });
 
             var trendCalculator = new TrendCalculator();
             return trendCalculator.Calculate(values);

@@ -9,6 +9,6 @@ namespace DTFKhayer.Services
 {
     public interface ITrendCalculator
     {
-       long Calculate(IDictionary<long, long> values);
+       long Calculate(IEnumerable<TrendDataItem> values);
     }
 }

@@ -1,6 +1,7 @@
 {
   "Html": "/DTFKhayer/viewmodels/SetupPage.html",
   "Name$": "",
+  "IsShowCorporate": false,
   "Corporates": [ { } ],
   "SaveCorporationTrigger$": 0
 }
