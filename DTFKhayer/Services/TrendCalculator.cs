@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,23 +11,50 @@ namespace DTFKhayer.Services
 {
     public class TrendCalculator:ITrendCalculator
     {
-        public long Calculate(Franchise franchise)
+        private long Weight = 100000000000000;
+        public long Calculate(IDictionary<long, long> values)
         {
-            long trend = 0;
+            var avgSlope = GetAvgSlope(values);
 
-            var maxDate = Db.SQL<DateTime>("SELECT Max(s.SalesDate) FROM Sale s WHERE s.Franchise = ?", franchise).First;
-            var minDate = Db.SQL<DateTime>("SELECT Min(s.SalesDate) FROM Sale s WHERE s.Franchise = ?", franchise).First;
-
-            var avgCommission = (long)Db.SQL<decimal>("SELECT AVG(s.Commission) FROM Sale s WHERE s.Franchise = ?", franchise).First;
-
-            var timeDuration = (maxDate - minDate).TotalDays;
-
-            if (timeDuration > 0)
-            {
-                trend = (long)(1000*((double)avgCommission/timeDuration));
-            }
+            var trend = Convert.ToInt64(avgSlope * Weight);
 
             return trend;
+        }
+
+        private decimal GetAvgSlope(IDictionary<long, long> values)
+        {
+            var slopes = new List<decimal>();
+
+            var counter = 1;
+            var prevValue = new KeyValuePair<long, long>();
+
+            foreach (var value in values)
+            {
+                if (counter == 1)
+                {
+                    prevValue = value;
+                    counter++;
+                    continue;
+                }
+
+                var x1 = prevValue.Key;
+                var y1 = prevValue.Value;
+                var x2 = value.Key;
+                var y2 = value.Value;
+                var slope = 0m;
+
+                var diffX = (x1 - x2);
+                if (diffX != 0)
+                {
+                    slope = Math.Abs((y1 - y2)/(decimal)diffX);
+                }
+                slopes.Add(slope);
+
+                prevValue = value;
+                counter++;
+            }
+
+            return slopes.Count > 0 ? slopes.Average() : 0m;
         }
     }
 }

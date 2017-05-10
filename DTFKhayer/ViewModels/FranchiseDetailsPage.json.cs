@@ -51,14 +51,5 @@ namespace DTFKhayer
             Transaction.Commit();
         }
 
-        //private void ReloadSales()
-        //{
-        //    var franchiseService = new FranchiseService();
-        //    var franchise = franchiseService.GetFranchise("test office");
-
-        //    var salesService = new SaleService();
-
-        //    this.Sales = salesService.GetAllSales() as SalesListPage;
-        //}
     }
 }

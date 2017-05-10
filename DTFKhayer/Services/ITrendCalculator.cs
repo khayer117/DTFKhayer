@@ -9,6 +9,6 @@ namespace DTFKhayer.Services
 {
     public interface ITrendCalculator
     {
-        long Calculate(Franchise franchise);
+       long Calculate(IDictionary<long, long> values);
     }
 }

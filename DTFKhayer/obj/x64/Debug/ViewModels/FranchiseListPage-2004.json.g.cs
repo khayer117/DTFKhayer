@@ -10,8 +10,10 @@ using Starcounter;
 using Starcounter.Internal;
 using Starcounter.Templates;
 using Starcounter.XSON;
+using System.Linq;
 using DTFKhayer.Services;
 using DTFKhayerEntity;
+using Starcounter.XSON.Interfaces;
 #pragma warning disable 0108
 #pragma warning disable 1591
 

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using DTFKhayer.Services;
 using Starcounter;
 using DTFKhayerEntity;
 
@@ -8,18 +10,6 @@ namespace DTFKhayer
     {
         static void Main()
         {
-            //Db.Transact(() =>
-            //{
-            //    var anyone = Db.SQL<Corporation>("SELECT p FROM Corporation p").First;
-            //    if (anyone == null)
-            //    {
-            //        new Corporation
-            //        {
-            //            Name = "TestCoporation"
-            //        };
-            //    }
-            //});
-
             var mainHandler = new RegisterMainHandlers();
             mainHandler.Register();
 
