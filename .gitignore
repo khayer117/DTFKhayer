@@ -1,0 +1,6 @@
+[Bb]in
+[Dd]ebug*/
+*.sbr
+[Rr]elease*/
+_ReSharper*/
+obj
